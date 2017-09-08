@@ -1,0 +1,29 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow: hidden;
+}
+table {
+  table-layout: fixed;
+  width: 300px;
+  border-collapse: collapse;
+  border: 2px solid #3ce6cf;
+  font: 20px Helvetica, Arial;
+  position: absolute;
+}
+
+th {
+  background: #d8c9d3;
+}
+
+td, th {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5px;
+  width: 100px;
+  text-align: center;
+  border: 2px solid #3ce6cf;
+}

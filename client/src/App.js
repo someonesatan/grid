@@ -23,7 +23,7 @@ class Grid extends Component {
 
   render() {
     return (
-      <div>
+      <div className='Grid'>
         <Table
           headers={this.state.headers}
           content={this.state.content}

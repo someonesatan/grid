@@ -6,7 +6,7 @@ class Table extends Component {
 
   render() {
     return (
-      <div>
+      <div className='Table'>
         <table>
           <Header headers={this.props.headers} />
           <Content content={this.props.content} />
