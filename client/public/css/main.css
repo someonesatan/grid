@@ -13,11 +13,9 @@ table {
   font: 20px Helvetica, Arial;
   position: absolute;
 }
-
 th {
   background: #d8c9d3;
 }
-
 td, th {
   white-space: nowrap;
   overflow: hidden;
@@ -26,4 +24,12 @@ td, th {
   width: 100px;
   text-align: center;
   border: 2px solid #3ce6cf;
+}
+#closeButton {
+  position: absolute;
+  left: 93%;
+  bottom: 90%;
+}
+.modal {
+  text-align: center;
 }

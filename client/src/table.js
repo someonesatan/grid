@@ -9,7 +9,10 @@ class Table extends Component {
       <div className='Table'>
         <table>
           <Header headers={this.props.headers} />
-          <Content content={this.props.content} />
+          <Content
+            content={this.props.content}
+            handleOnClick={this.props.handleOnClick}
+          />
         </table>
       </div>
     )

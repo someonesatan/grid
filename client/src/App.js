@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Network from './network';
 import Table from './table';
+import Modal from './modal';
 
 const network = new Network();
 
@@ -10,8 +11,12 @@ class Grid extends Component {
     super(props);
     this.state = {
       headers: [],
-      content: []
+      content: [],
+      modalIsOpen: false,
+      value: ''
     }
+
+    this.handleOnClick = this.handleOnClick.bind(this);
   }
 
   componentDidMount() {
@@ -21,13 +26,30 @@ class Grid extends Component {
     })
   }
 
+  handleOnClick = (e) => {
+    this.setState({
+      modalIsOpen: !this.state.modalIsOpen,
+      value: e.target.innerHTML
+    })
+  }
+
   render() {
     return (
-      <div className='Grid'>
-        <Table
-          headers={this.state.headers}
-          content={this.state.content}
-        />
+      <div className='app'>
+        <div className='grid'>
+          <Table
+            headers={this.state.headers}
+            content={this.state.content}
+            handleOnClick={this.handleOnClick}
+          />
+        </div>
+        <div className='modal'>
+          <Modal
+            show={this.state.modalIsOpen}
+            onClose={this.handleOnClick}
+            value={this.state.value}
+          />
+        </div>
       </div>
     );
   }

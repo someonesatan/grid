@@ -2,10 +2,18 @@ import React, { Component } from 'react';
 
 class Content extends Component {
 
+  constructor(props) {
+    super(props);
+    this.toggleModal = this.toggleModal.bind(this);
+  }
+
   getTd(array) {
     let tdArray = [];
     tdArray = array.map((value, index) =>
-      <td key={index}>
+      <td key={index}
+          onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut}
+          onClick={this.toggleModal}
+      >
         {value}
       </td>
     )
@@ -20,6 +28,18 @@ class Content extends Component {
       </tr>
     )
     return trArray;
+  }
+
+  handleMouseOver(e) {
+    e.target.bgColor='#b3d0cc'
+  }
+
+  handleMouseOut(e) {
+    e.target.bgColor='#FFFFFF'
+  }
+
+  toggleModal(e) {
+    this.props.handleOnClick(e);
   }
 
   render() {
